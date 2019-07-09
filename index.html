@@ -1,0 +1,177 @@
+<html>
+
+<style>
+
+body {
+    font: 7pt arial;
+    cursor: crosshair;
+}
+h1 {
+    font: bold 8pt tahoma;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.outercontainer {
+    position: fixed;
+    width: 200px;
+    height: 100px;
+}
+.innercontainer {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    border: 1px solid #8293FE;
+    text-align: center;
+}
+#haircontainer {
+    top: 50px;
+    left: 100px;
+}
+#headcontainer {
+    top: 200px;
+    left: 100px;
+}
+#bodycontainer {
+    top: 350px;
+    left: 100px;
+}
+#facecontainer {
+    top: 500px;
+    left: 100px;
+}
+
+.drag {
+    position: absolute;
+}
+.hair {
+    z-index: 100;
+}
+.head {
+    z-index: 80;
+}
+
+</style>
+
+<body>
+
+<div id="bodycontainer" class="outercontainer"><div class="innercontainer">
+
+<h1>bodies</h1>
+
+<img id="blueonesiebody" class="drag body" src="https://i.imgur.com/QK7h20s.gif" style="bottom:10px;left:10px">
+<img id="gnomeoutfit" class="drag body" src="https://i.imgur.com/ZxJaO4T.gif" style="bottom:10px;left:30px">
+<img id="mermaid" class="drag body" src="https://i.imgur.com/P2FUr4j.gif" style="bottom:10px;left:55px">
+<img id="beeoutfit" class="drag body" src="https://i.imgur.com/Na2h9mc.gif" style="bottom:10px;left:90px">
+
+</div></div>
+
+<div id="headcontainer" class="outercontainer"><div class="innercontainer">
+
+<h1>heads</h1>
+
+<img id="greenhead" class="drag head" src="https://i.imgur.com/5DtIbpc.gif" style="bottom:10px;left:10px">
+<img id="pinkhead" class="drag head" src="https://i.imgur.com/Tl4XOLy.gif" style="bottom:10px;left:30px">
+<img id="cutepurplehead" class="drag head" src="https://i.imgur.com/WSwPbE1.gif" style="bottom:10px;left:50px">
+<img id="bluebashfulhead" class="drag head" src="https://i.imgur.com/qV10wGO.gif" style="bottom:10px;left:75px">
+<img id="3eyesalienhead" class="drag head" src="https://i.imgur.com/EqFXOJj.gif" style="bottom:10px;left:95px">
+
+</div></div>
+
+<div id="haircontainer" class="outercontainer"><div class="innercontainer">
+
+<h1>head decorations</h1>
+
+<img id="greenhair" class="drag hair" src="https://i.imgur.com/DYJaYfl.gif" style="bottom:10px;left:10px">
+<img id="pinkponytail" class="drag hair" src="https://i.imgur.com/sncSGEe.gif" style="bottom:10px;left:30px">
+<img id="yellowtopponytail" class="drag hair" src="https://i.imgur.com/HKhaoYx.gif" style="bottom:10px;left:50px">
+<img id="gnomehat" class="drag hair" src="https://i.imgur.com/3twi5kO.gif" style="bottom:10px;left:70px">
+<img id="strawberryhat" class="drag hair" src="https://i.imgur.com/xRw2Tqg.gif" style="bottom:10px;left:90px">
+<img id="witchhat" class="drag hair" src="https://i.imgur.com/yIrPq6A.gif" style="bottom:10px;left:120px">
+<img id="mushroomhat" class="drag hair" src="https://i.imgur.com/cBWfaEA.gif" style="bottom:10px;left:140px">
+<img id="antennae" class="drag hair" src="https://i.imgur.com/WrGbmUf.gif" style="bottom:10px;left:165px">
+
+</div></div>
+
+<div id="facecontainer" class="outercontainer"><div class="innercontainer">
+
+<h1>face decorations</h1>
+
+<img id="sunglasses" class="drag facedecor" src="https://i.imgur.com/BNWlzTE.gif" style="bottom:30px;left:10px">
+<img id="unibrow" class="drag facedecor" src="https://i.imgur.com/Sx1kXFP.gif" style="bottom:30px;left:30px">
+
+</div></div>
+
+
+
+<script>
+//Make the DIV element draggagle:
+
+dragElement(document.getElementById("blueonesiebody"));
+dragElement(document.getElementById("gnomeoutfit"));
+dragElement(document.getElementById("mermaid"));
+dragElement(document.getElementById("beeoutfit"));
+
+dragElement(document.getElementById("greenhair"));
+dragElement(document.getElementById("pinkponytail"));
+dragElement(document.getElementById("yellowtopponytail"));
+dragElement(document.getElementById("gnomehat"));
+dragElement(document.getElementById("strawberryhat"));
+dragElement(document.getElementById("witchhat"));
+dragElement(document.getElementById("mushroomhat"));
+dragElement(document.getElementById("antennae"));
+
+
+dragElement(document.getElementById("greenhead"));
+dragElement(document.getElementById("pinkhead"));
+dragElement(document.getElementById("cutepurplehead"));
+dragElement(document.getElementById("bluebashfulhead"));
+dragElement(document.getElementById("3eyesalienhead"));
+
+
+dragElement(document.getElementById("sunglasses"));
+dragElement(document.getElementById("unibrow"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+
+</body>
+</html>
