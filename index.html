@@ -3,69 +3,89 @@
 <style>
 
 body {
+    background: url('http://static.colourlovers.com/images/patterns/3382/3382746.png') fixed;
+    overflow: hidden;
     font: 7pt arial;
     cursor: crosshair;
 }
 h1 {
-    font: bold 8pt tahoma;
-    letter-spacing: 1px;
+    font: bold 6pt tahoma;
+    color: #fff;
+    letter-spacing: 2px;
     text-transform: uppercase;
+    width: 100%;
+    background: #BEB0FA;
+    margin-top: -5px;
+    padding: 10px 0 10px 0;
+}
+#workspace {
+    top: 10%;
+    right: 25%;
+    width: 50%;
+    height: 80%;
+    background: #fff;
 }
 .outercontainer {
     position: fixed;
     width: 200px;
-    height: 100px;
 }
 .innercontainer {
     position: relative;
     width: inherit;
     height: inherit;
-    border: 1px solid #8293FE;
+    border: 5px solid #BEB0FA;
+    background: #fff;
     text-align: center;
 }
 #haircontainer {
     top: 50px;
-    left: 100px;
+    left: 50px;
 }
 #headcontainer {
-    top: 200px;
-    left: 100px;
+    top: 180px;
+    left: 50px;
 }
 #bodycontainer {
-    top: 350px;
-    left: 100px;
+    top: 290px;
+    left: 50px;
 }
 #facecontainer {
-    top: 500px;
-    left: 100px;
+    top: 460px;
+    left: 50px;
 }
 
 .drag {
     position: absolute;
-}
-.hair {
-    z-index: 100;
-}
-.head {
-    z-index: 80;
 }
 
 </style>
 
 <body>
 
-<div id="bodycontainer" class="outercontainer"><div class="innercontainer">
+
+<div id="workspace" style="position:fixed">
+
+
+</div>
+
+<div id="bodycontainer" class="outercontainer" style="height:140px"><div class="innercontainer">
 
 <h1>bodies</h1>
 
-<img id="blueonesiebody" class="drag body" src="https://i.imgur.com/QK7h20s.gif" style="bottom:10px;left:10px">
-<img id="gnomeoutfit" class="drag body" src="https://i.imgur.com/ZxJaO4T.gif" style="bottom:10px;left:30px">
+<img id="blueonesiebody" class="drag body" src="https://i.imgur.com/QK7h20s.gif" style="bottom:70px;left:50px">
+<img id="gnomeoutfit" class="drag body" src="https://i.imgur.com/ZxJaO4T.gif" style="bottom:10px;left:20px">
 <img id="mermaid" class="drag body" src="https://i.imgur.com/P2FUr4j.gif" style="bottom:10px;left:55px">
 <img id="beeoutfit" class="drag body" src="https://i.imgur.com/Na2h9mc.gif" style="bottom:10px;left:90px">
+<img id="butterfly" class="drag body" src="https://i.imgur.com/BToYoIZ.gif" style="bottom:5px;left:128px">
+<img id="caterpillar" class="drag body" src="https://i.imgur.com/Aghjchy.gif" style="bottom:35px;left:10px">
+<img id="flowerdress" class="drag body" src="https://i.imgur.com/cOx5CzA.gif" style="bottom:35px;left:50px">
+<img id="pumpkincostume" class="drag body" src="https://i.imgur.com/LLnZcf8.gif" style="bottom:35px;left:90px">
+<img id="snailcostume" class="drag body" src="https://i.imgur.com/ZD9yAfX.gif" style="bottom:35px;left:130px">
+<img id="pinkyellowonesie" class="drag body" src="https://i.imgur.com/mM1CkVa.gif" style="bottom:65px;left:10px">
 
 </div></div>
 
-<div id="headcontainer" class="outercontainer"><div class="innercontainer">
+<div id="headcontainer" class="outercontainer" style="height:80px"><div class="innercontainer">
 
 <h1>heads</h1>
 
@@ -74,10 +94,13 @@ h1 {
 <img id="cutepurplehead" class="drag head" src="https://i.imgur.com/WSwPbE1.gif" style="bottom:10px;left:50px">
 <img id="bluebashfulhead" class="drag head" src="https://i.imgur.com/qV10wGO.gif" style="bottom:10px;left:75px">
 <img id="3eyesalienhead" class="drag head" src="https://i.imgur.com/EqFXOJj.gif" style="bottom:10px;left:95px">
+<img id="onetoothguy" class="drag head" src="https://i.imgur.com/PLj9h8h.gif" style="bottom:7px;left:123px">
+<img id="lemonhead" class="drag head" src="https://i.imgur.com/GRuRU7Y.gif" style="bottom:7px;left:149px">
+<img id="greentongueguy" class="drag head" src="https://i.imgur.com/DfEkf5x.gif" style="bottom:7px;left:170px">
 
 </div></div>
 
-<div id="haircontainer" class="outercontainer"><div class="innercontainer">
+<div id="haircontainer" class="outercontainer" style="height:100px"><div class="innercontainer">
 
 <h1>head decorations</h1>
 
@@ -89,15 +112,17 @@ h1 {
 <img id="witchhat" class="drag hair" src="https://i.imgur.com/yIrPq6A.gif" style="bottom:10px;left:120px">
 <img id="mushroomhat" class="drag hair" src="https://i.imgur.com/cBWfaEA.gif" style="bottom:10px;left:140px">
 <img id="antennae" class="drag hair" src="https://i.imgur.com/WrGbmUf.gif" style="bottom:10px;left:165px">
+<img id="wizardhat" class="drag hair" src="https://i.imgur.com/95MDPm2.gif" style="bottom:30px;left:10px">
 
 </div></div>
 
-<div id="facecontainer" class="outercontainer"><div class="innercontainer">
+<div id="facecontainer" class="outercontainer" style="height:80px"><div class="innercontainer">
 
 <h1>face decorations</h1>
 
-<img id="sunglasses" class="drag facedecor" src="https://i.imgur.com/BNWlzTE.gif" style="bottom:30px;left:10px">
-<img id="unibrow" class="drag facedecor" src="https://i.imgur.com/Sx1kXFP.gif" style="bottom:30px;left:30px">
+<img id="sunglasses" class="drag facedecor" src="https://i.imgur.com/BNWlzTE.gif" style="bottom:10px;left:10px">
+<img id="unibrow" class="drag facedecor" src="https://i.imgur.com/Sx1kXFP.gif" style="bottom:10px;left:35px">
+<img id="beard" class="drag facedecor" src="https://i.imgur.com/hXN6Znb.gif" style="bottom:5px;left:50px">
 
 </div></div>
 
@@ -110,6 +135,12 @@ dragElement(document.getElementById("blueonesiebody"));
 dragElement(document.getElementById("gnomeoutfit"));
 dragElement(document.getElementById("mermaid"));
 dragElement(document.getElementById("beeoutfit"));
+dragElement(document.getElementById("butterfly"));
+dragElement(document.getElementById("caterpillar"));
+dragElement(document.getElementById("flowerdress"));
+dragElement(document.getElementById("pumpkincostume"));
+dragElement(document.getElementById("snailcostume"));
+dragElement(document.getElementById("pinkyellowonesie"));
 
 dragElement(document.getElementById("greenhair"));
 dragElement(document.getElementById("pinkponytail"));
@@ -119,6 +150,7 @@ dragElement(document.getElementById("strawberryhat"));
 dragElement(document.getElementById("witchhat"));
 dragElement(document.getElementById("mushroomhat"));
 dragElement(document.getElementById("antennae"));
+dragElement(document.getElementById("wizardhat"));
 
 
 dragElement(document.getElementById("greenhead"));
@@ -126,10 +158,14 @@ dragElement(document.getElementById("pinkhead"));
 dragElement(document.getElementById("cutepurplehead"));
 dragElement(document.getElementById("bluebashfulhead"));
 dragElement(document.getElementById("3eyesalienhead"));
+dragElement(document.getElementById("onetoothguy"));
+dragElement(document.getElementById("lemonhead"));
+dragElement(document.getElementById("greentongueguy"));
 
 
 dragElement(document.getElementById("sunglasses"));
 dragElement(document.getElementById("unibrow"));
+dragElement(document.getElementById("beard"));
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
